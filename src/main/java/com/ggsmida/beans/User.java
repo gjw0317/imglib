@@ -9,7 +9,7 @@ import java.util.Date;
 public class User {
 
     private Integer id; //用户ID
-    private String user_name; //用户名
+    private String email; //邮箱
     private String nick_name; //昵称
     private String name; //真实姓名
     private String id_number; //证件号
@@ -18,6 +18,7 @@ public class User {
     private String telephone; //座机
     private String cellphone; //手机
     private Integer status; //用户状态,0表示仍在使用，1表示不再使用
+    private String password; //密码
     private Date create_time; //创建时间
     private Date modify_time; //修改时间，初始情况下同创建时间
 
@@ -37,12 +38,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNick_name() {
@@ -107,6 +108,14 @@ public class User {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Date getCreate_time() {

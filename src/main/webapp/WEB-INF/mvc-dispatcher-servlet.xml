@@ -24,14 +24,31 @@
     <mvc:default-servlet-handler/>
 
     <!--开启注解-->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <!--ViewReslver 视图解析器-->
     <!--用于支持Servlet、JSP视图解析-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/pages/"/>
-        <property name="suffix" value=".jsp"/>
+        <property name="suffix" value=".html"/>
+    </bean>
+
+    <bean name="/*.htm" class="org.springframework.web.servlet.mvc.UrlFilenameViewController">
+        <property name="prefix" value="test"/>
+        <property name="suffix" value="test"/>
     </bean>
 
     <!-- 引入外部数据源配置信息 -->

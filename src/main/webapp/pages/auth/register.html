@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1">
+
+    <title>注册 - Smida图床</title>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="pages/auth/auth.css">
+</head>
+<body>
+<!--v-clock是为了防止在数据加载完之前，会出现vue.js的变量的情况-->
+<!--原理是在vue.js实例ready后，会去掉v-clock属性-->
+<div id="app" v-cloak>
+    <div class="container">
+        <span id="message">{{ msg }}</span>
+    </div>
+    <div class="container">
+        <div class="form-group">
+            <label>用户名</label>
+            <input type="text" v-model="registerModel.nick_name"/>
+        </div>
+        <div class="form-group">
+            <label>电子邮箱</label>
+            <input type="text" v-model="registerModel.email"/>
+        </div>
+        <div class="form-group">
+            <label>密码</label>
+            <input type="password" v-model="registerModel.password"/>
+        </div>
+        <div class="form-group">
+            <label>确认密码</label>
+            <input type="password" v-model="registerModel.confirmPassword"/>
+        </div>
+        <div class="form-group">
+            <label></label>
+            <button @click="register" class="btn btn-primary">注册</button>
+            <button @click="back_login" class="btn btn-primary">返回登陆</button>
+        </div>
+    </div>
+</div>
+<script src="lib/js/jquery-3.1.1.min.js"></script>
+<script src="lib/js/vue.js"></script>
+<script>
+    $(document).ready(function () {
+        debugger;
+        if (!window.location.href.endsWith("/register")) {
+            window.location.href = "/register";
+        }
+    })
+
+    var registerApp = new Vue({
+        el: '#app',
+        data: {
+            registerModel: {
+                nick_name: '',
+                email: '',
+                password: '',
+                confirmPassword: ''
+            },
+            msg: ''
+        },
+        methods: {
+            register: function () {
+                var vm = this
+                vm.msg = ''
+                $.ajax({
+                    type: 'post',
+                    url: '/api/account/' + vm.registerModel.email + '/add',
+                    data: JSON.stringify(vm.registerModel),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    success: function (result) {
+                        debugger;
+                        if (result.resultCode == 200) {
+                            vm.msg = '注册成功！'
+                        } else {
+                            vm.msg = result.resultMsg;
+                        }
+                    },
+                    error: function () {
+                        vm.msg = "注册失败！"
+                    }
+                })
+            },
+            back_login: function () {
+                window.location.href = "/login";
+            }
+        }
+    })
+</script>
+</body>
+</html>

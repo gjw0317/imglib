@@ -13,13 +13,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class MainController {
-    @Autowired
-    UserMapper userMapper;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String root() throws Exception {
+        return "auth/login";
+    }
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() throws Exception {
-        User user = userMapper.findUserById(2);
-        System.out.println("#" + user.getNick_name());
         return "index";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() throws Exception {
+        return "auth/login";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register() throws Exception {
+        return "auth/register";
     }
 }
