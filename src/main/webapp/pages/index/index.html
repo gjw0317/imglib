@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1">
+
+    <title>Smida图床</title>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="pages/index/index.css">
+</head>
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Smida图床</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#browse" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">浏览 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">所有</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#scenery">风景</a></li>
+                        <li><a href="#technology">科技</a></li>
+                    </ul>
+                </li>
+                <li><a href="#hot">热门</a></li>
+                <li><a href="#random">随机</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/login">登录</a></li>
+                <li><a href="/register">注册账号</a></li>
+                <li class="/index"><a href="./">首页</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<script src="lib/js/jquery-3.1.1.min.js"></script>
+<script src="lib/js/vue.js"></script>
+<script>
+    $(document).ready(function () {
+        if (!window.location.href.endsWith("/index")) {
+            window.location.href = "/index";
+        }
+    })
+</script>
+</body>
+</html>

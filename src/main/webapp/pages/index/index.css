@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Grechen_Fuemen_ROB;
+    src: url('/lib/fonts/Grechen_Fuemen_ROB.ttf');
+}
+
+.navbar-brand {
+    font-family: Grechen_Fuemen_ROB;
+}
+
+nav.navbar-default {
+    background-color: #66afe9;
+}
