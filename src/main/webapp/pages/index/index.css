@@ -26,9 +26,17 @@ p {
     height: 50px;
 }
 
-#fixed_nav div a {
+#fixed_nav div>ul>li>a, #fixed_nav div>a.navbar-brand {
     font-size: 18px;
     color: #ffffff !important;
+}
+
+.navbar-default .navbar-nav>.open>a:focus {
+    background-color: #3097D1 !important;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    background-color: #3097D1 !important;
 }
 
 @font-face {
@@ -43,6 +51,16 @@ p {
 .navbar {
     margin-bottom: 0;
     border: 0;
+}
+
+a.u_hp {
+    width: 65px;
+    padding: 0 15px 0 15px !important;
+    line-height: 50px !important;
+}
+a.u_hp>img.u_hp {
+    width: 35px;
+    height: 35px;
 }
 
 

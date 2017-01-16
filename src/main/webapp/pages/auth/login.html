@@ -20,11 +20,11 @@
     <div class="container">
         <div class="form-group">
             <label>电子邮箱</label>
-            <input type="text" v-model="loginModel.email"/>
+            <input type="text" @keyup.enter="login" v-model="loginModel.email"/>
         </div>
         <div class="form-group">
             <label>密码</label>
-            <input type="password" v-model="loginModel.password"/>
+            <input type="password" @keyup.enter="login" v-model="loginModel.password"/>
         </div>
         <div class="form-group">
             <label></label>
