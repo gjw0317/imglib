@@ -1,3 +1,36 @@
+/*全局样式*/
+div {
+    display: block;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.u_hp {
+    width: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 0;
+}
+
+/*顶部固定导航栏样式*/
+#fixed_nav {
+    background-color: #3097D1 !important;
+    height: 50px;
+}
+
+#fixed_nav div a {
+    font-size: 18px;
+    color: #ffffff !important;
+}
+
 @font-face {
     font-family: Grechen_Fuemen_ROB;
     src: url('/lib/fonts/Grechen_Fuemen_ROB.ttf');
@@ -7,6 +40,73 @@
     font-family: Grechen_Fuemen_ROB;
 }
 
-nav.navbar-default {
-    background-color: #66afe9;
+.navbar {
+    margin-bottom: 0;
+    border: 0;
 }
+
+
+/*中间大图、封面样式*/
+.cover {
+    background: url('https://bootstrap-themes.github.io/application/assets/img/iceland.jpg') top center no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 50px;
+    display: table;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    border: 0;
+    margin-bottom: 0;
+}
+
+.user_abstract {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cover .u_hp {
+    width: 110px;
+}
+
+.cover .u_name {
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.cover .u_signature {
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/*示例图片样式*/
+.sample {
+    position: relative;
+    top: 50px;
+    width: 100%;
+    height: 800px;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+}
+.s_image {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.s_image img {
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+}
+
+.wide_image img {
+    width: 400px;
+    height: 250px;
+}
+
