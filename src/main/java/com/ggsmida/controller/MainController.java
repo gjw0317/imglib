@@ -16,7 +16,7 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root() throws Exception {
-        return "auth/login";
+        return "index/index";
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)

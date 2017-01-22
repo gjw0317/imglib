@@ -45,6 +45,6 @@
     </listener>
 
     <welcome-file-list>
-        <welcome-file>/page/index.html</welcome-file>
+        <welcome-file>/page/index/index.html</welcome-file>
     </welcome-file-list>
 </web-app>
