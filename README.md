@@ -1,2 +1,2 @@
 # Simda图床
-![首页](http://123.56.78.120/library/project/readme/index.jpg "首页")  
+![首页](http://om4hnr4n0.bkt.clouddn.com/image/smida_imglib.png "首页")  
